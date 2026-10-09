@@ -1,0 +1,27 @@
+:root{--bg:#faf7f2;--card:#fff;--ink:#241a38;--mute:#6b6280;--acc:#6d3fc4;--gold:#e8a33d;--line:#e5dff0;--bot:#f0eaf9}
+@media (prefers-color-scheme:dark){:root{--bg:#130e22;--card:#1d1633;--ink:#efeaff;--mute:#a79dc4;--acc:#7b4fdc;--gold:#f0b95a;--line:#33294f;--bot:#2a2146}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Georgia,serif}
+.wrap{max-width:900px;margin:0 auto;padding:16px}
+header{text-align:center;padding:16px 0 4px}h1{margin:0}h1 span{color:var(--gold)}header p{color:var(--mute);margin:4px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:14px 0}
+h2{font-size:1.05rem;margin:0 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+label{font-size:.8rem;color:var(--mute);display:block;margin-bottom:3px}
+input,textarea{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+button{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:9px 16px;background:var(--acc);color:#fff}
+button:disabled{opacity:.5}
+.hint,.note{font-size:.78rem;color:var(--mute)}.note{text-align:center;margin-bottom:24px}
+.personas{display:flex;gap:8px;flex-wrap:wrap}
+.personas button{background:transparent;color:var(--ink);border:1px solid var(--line);text-align:left}
+.personas button.on{border-color:var(--acc);background:var(--bot)}
+.personas small{display:block;color:var(--mute);font-size:.75rem}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.chips button{background:transparent;color:var(--acc);border:1px solid var(--line);padding:5px 10px;font-size:.85rem}
+#log{height:min(50vh,440px);overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding:4px}
+.m{max-width:85%;padding:10px 13px;border-radius:14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.m.u{align-self:flex-end;background:var(--acc);color:#fff}.m.b{align-self:flex-start;background:var(--bot)}
+.send{display:flex;gap:8px;margin-top:10px}.send textarea{resize:none;height:44px}
+details{margin-top:12px;font-size:.88rem}summary{cursor:pointer;color:var(--acc)}
+#evbody{padding-top:8px;color:var(--mute)}#evbody b{color:var(--ink)}
+.tag{display:inline-block;background:var(--bot);border-radius:8px;padding:1px 8px;margin:2px 4px 2px 0;font-size:.78rem}

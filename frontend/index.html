@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nakshatra</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header><h1>✦ Nakshatra<span>.ai</span></h1>
+  <p>AI astrologers grounded in a real birth chart. For reflection and entertainment.</p></header>
+
+  <section class="card">
+    <h2>1 · Birth details</h2>
+    <div class="grid">
+      <div><label>Name</label><input id="name" maxlength="40" placeholder="Your name"></div>
+      <div><label>Date of birth</label><input id="dob" type="date"></div>
+      <div><label>Time of birth (optional)</label><input id="tob" type="time"></div>
+      <div><label>Place (optional)</label><input id="pob" placeholder="e.g. Bengaluru"></div>
+    </div>
+    <p class="hint">Adding time and a known city enables rising sign. Use test data if you prefer.</p>
+  </section>
+
+  <section class="card">
+    <h2>2 · Astrologer</h2>
+    <div class="personas" id="personas"></div>
+  </section>
+
+  <section class="card">
+    <h2>3 · Ask</h2>
+    <div class="chips" id="chips"></div>
+    <div id="log"><div class="m b">Namaste 🙏 Fill in your details, choose an astrologer and ask away.</div></div>
+    <div class="send">
+      <textarea id="q" maxlength="500" placeholder="Will my career change this year?"></textarea>
+      <button id="go">Send</button>
+    </div>
+    <details id="evidence" hidden><summary>Show the evidence</summary><div id="evbody"></div></details>
+  </section>
+  <p class="note" id="disclaimer">AI-generated for reflection and entertainment. Not medical, legal or financial advice.</p>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
