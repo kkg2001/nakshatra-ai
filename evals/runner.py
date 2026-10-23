@@ -104,7 +104,7 @@ def build_client(provider: str, model: str | None = None):
         from backend.app.llm.factory import make_llm
         return make_llm()
     from backend.app.llm.gemini import GeminiClient
-    return GeminiClient(model=model)
+    return GeminiClient(model=model, min_interval=5.0)
 
 
 def main() -> None:
