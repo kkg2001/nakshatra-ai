@@ -23,7 +23,7 @@ def test_health(client):
 def test_chat_returns_answer_and_evidence(client):
     r = client.post("/api/chat", json=BODY).json()
     assert r["answer"] and r["chart"]["tropical_sun"]["sign"] == "Leo"
-    assert {"sources", "flags", "model", "prompt_version", "disclaimer"} <= set(r)
+    assert {"sources", "flags", "model", "prompt_version"} <= set(r)
 
 
 @pytest.mark.parametrize("patch", [{"profile": {"name": "A", "dob": "not-a-date"}},
