@@ -1,11 +1,9 @@
-"""The app's answer pipeline: guardrails -> chart tool -> RAG -> LLM -> output checks."""
 from __future__ import annotations
 
 import re
 
 from backend.app.guardrails.input import classify_topics, detect_injection, redact_pii
-from backend.app.guardrails.output import CRISIS_REPLY,INJECTION_REPLY,SAFE_FALLBACK,violations
-
+from backend.app.guardrails.output import CRISIS_REPLY,DISCLAIMER,INJECTION_REPLY,SAFE_FALLBACK,violations
 from backend.app.llm.base import LLMClient
 from backend.app.prompts import PROMPT_VERSION, load_prompt
 from backend.app.rag.store import KnowledgeBase, get_kb
@@ -36,7 +34,7 @@ def answer_question(client: LLMClient, profile, question: str, persona: str = "w
     q, pii = redact_pii(question.strip())
     flags = ["pii_redacted"] if pii else []
     base = {"persona": persona, "prompt_version": PROMPT_VERSION, "model": client.name,
-            "chart": None, "sources": [], "blocked": False}
+            "chart": None, "sources": [], "disclaimer": DISCLAIMER, "blocked": False}
 
     if detect_injection(q):
         return {**base, "answer": INJECTION_REPLY, "flags": flags + ["injection_blocked"],
